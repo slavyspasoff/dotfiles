@@ -1,0 +1,162 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$username\
+$hostname\
+$localip\
+$kubernetes\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$docker_context\
+$jobs\
+$fill\
+$package\
+$c\
+$cmake\
+$deno\
+$golang\
+$java\
+$kotlin\
+$lua\
+$nodejs\
+$python\
+$rust\
+$zig\
+$memory_usage\
+$cmd_duration\
+$line_break\
+$status\
+$character\
+$sudo"""
+
+# COLORS:
+# #FF9248 - Orange
+# #191f48 - Darker Blue
+# #43CCEA - Cyan
+# #191f48 - Dark Blue
+# #0587B3 - Dark-Green Blue
+# #7F9A9F - Dark Olive
+
+[c]
+symbol = " "
+format = "[$symbol($name ($version) )]($style)"
+style = "#7F9A9F"
+
+[character]
+format = " $symbol "
+success_symbol = "[❯](bold cyan)"
+error_symbol = "[❯](bold purple)"
+vimcmd_symbol = "[❮](bold green)"
+vimcmd_visual_symbol = "[❮](bold yellow)"
+vimcmd_replace_one_symbol = "[❮](bold purple)"
+vimcmd_replace_symbol = "[❮](bold purple)"
+
+[directory]
+style = "#BBE6E4 italic"
+read_only = " 󰌾"
+format = ' [$path]($style)[$read_only]($read_only_style) '
+truncation_length = 3
+truncate_to_repo = false
+truncation_symbol = " /"
+home_symbol = " "
+
+
+[docker_context]
+symbol = " "
+
+[fill]
+symbol = " "
+
+[git_branch]
+symbol = " "
+format = "[$symbol$branch(:$remote_branch)]($style) "
+style = "#7F9A9F"
+
+[git_commit]
+style = "yellow"
+format = "[$hash$tag]($style) "
+tag_disabled = false
+tag_symbol = "   "
+
+[git_status]
+conflicted = " ${count} "
+ahead = "⇡${count} "
+behind = "⇣${count} "
+diverged = " ⇡${ahead_count}⇣${behind_count} "
+untracked = "󱪛 ${count} "
+stashed = "󰉉 ${count} "
+modified = "󰷈 ${count} "
+staged = "󱪝 ${count} "
+renamed = "󱟘 ${count} "
+deleted = "󱪟 ${count} "
+format = '[$all_status$ahead_behind]($style) '
+style = 'fg:#43CCEA bg:#191f48'
+
+[golang]
+symbol = " "
+format = "[$symbol($version )]($style)"
+style = "cyan"
+
+[jobs]
+symbol = " "
+
+[hostname]
+ssh_symbol = " "
+
+[kotlin]
+symbol = "🅺 "
+format = "[$symbol($version )]($style)"
+style = "blue"
+
+[java]
+symbol = " "
+format = "[${symbol}(${version} )]($style)"
+style = "red dimmed"
+
+[lua]
+symbol = " "
+format = "[$symbol($version )]($style)"
+style = "blue"
+
+[memory_usage]
+symbol = "󰍛 "
+format = '$symbol[${ram_pct}]($style)'
+disabled = false
+threshold = 75 
+
+[nodejs]
+symbol = "󰎙 "
+format = "[$symbol($version )]($style)"
+style = "green"
+
+[package]
+symbol = " "
+format = "[$symbol$version]($style) "
+style = "208"
+disabled = true
+
+[python]
+symbol = " "
+format = "[${symbol}${pyenv_prefix}(${version} )]($style)"
+style = "yellow"
+
+[rust]
+symbol = "󱘗 "
+format = "[$symbol($version )]($style)"
+style = "red"
+
+[status]
+disabled = false
+pipestatus = true
+style = "bold purple"
+format = "[$symbol$status]($style)"
+
+[sudo]
+disabled = false
+style = "red bold"
+symbol = " "
+format = "[as root $symbol ]($style)"
