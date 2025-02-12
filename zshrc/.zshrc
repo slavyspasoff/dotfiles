@@ -5,8 +5,8 @@ export HISTFILE=$HOME/.zsh_history
 #export LC_ALL=en_US.UTF-8
 
 #path env
-export PATH=/home/spasoff/go/bin/:$PATH
-export PATH=/home/spasoff/.cargo/bin/:$PATH
+export PATH=$PATH:/home/spasoff/go/bin/
+export PATH=$PATH:/home/spasoff/.cargo/bin/
 export PATH=$PATH:/home/spasoff/.appimage-bin/
 
 #zsh options
@@ -68,11 +68,12 @@ alias fgrep='fgrep --color=auto'
 alias zgrep='fgrep --color=auto'
 alias df='df -h'
 alias du='du -h'
+alias duf='duf --only-fs btrfs'
 alias free='free -m'
 alias yy="yazi"
 alias fzf="fzf --layout=reverse"
-alias zed=zeditor
-alias chez=chezmoi
+alias zed="zededitor"
+alias chez="chezmoi"
 
 le(){
  if [[ $1 != [0-9] ]]; then

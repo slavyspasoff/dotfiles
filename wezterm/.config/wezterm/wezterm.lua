@@ -52,7 +52,8 @@ config.default_cursor_style = "BlinkingUnderline"
 config.scrollback_lines = 10000
 
 -- animation
-config.animation_fps = 60
+config.max_fps = 180
+config.animation_fps = 180
 
 -- keys
 config.disable_default_key_bindings = true
